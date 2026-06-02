@@ -275,7 +275,7 @@ function updateCountdown(){
 
     const targetDate =
         new Date(
-            "2026-08-15T16:00:00"
+            "2026-06-19T16:00:00"
         );
 
     const now =
