@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0">
+
+  <title>Nathalia GP 2026</title>
+
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com">
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <link
+    rel="stylesheet"
+    href="css/styles.css">
+</head>
+
+<body>
+
+  <!-- SPLASH SCREEN -->
+
+  <div id="splash-screen">
+
+      <div class="splash-content">
+
+          <img
+              src="images/logo.png"
+              class="event-logo"
+              alt="NATHALIA GP">
+        
+          <div class="round">
+              ROUND 01
+          </div>
+
+          <h1>NATHALIA GP</h1>
+
+          <p>
+              Formula One Birthday Experience
+          </p>
+
+          <button
+              class="btn"
+              onclick="startRaceSequence()">
+
+              ENTER PADDOCK
+
+          </button>
+
+      </div>
+
+  </div>
+
+  <!-- RACE LIGHTS -->
+
+  <div id="race-overlay">
+
+      <div class="race-center">
+
+          <div class="lights-container">
+
+              <div class="race-light"></div>
+              <div class="race-light"></div>
+              <div class="race-light"></div>
+              <div class="race-light"></div>
+              <div class="race-light"></div>
+
+          </div>
+
+          <div class="race-text">
+
+              PREPARE FOR LIGHTS OUT
+
+          </div>
+
+      </div>
+
+  </div>
+
+  <!-- AUDIO -->
+
+  <audio id="raceMusic">
+
+      <source
+          src="music/Max Verstappen Song.mp3"
+          type="audio/mpeg">
+
+  </audio>
+
+  <!-- MAIN CONTENT -->
+
+  <main id="main-content">
+
+      <!-- HERO -->
+
+      <section id="hero">
+
+          <div class="hero-content">
+
+              <div class="hero-tag">
+
+                  GRAND PRIX WEEKEND
+
+              </div>
+
+              <h2>
+                  Welcome to
+              </h2>
+
+              <h1>
+                  NATHALIA GP
+              </h1>
+
+          </div>
+
+      </section>
+
+      <!-- COUNTDOWN -->
+
+      <section id="countdown">
+
+          <h2>
+
+              LIGHTS OUT IN
+
+          </h2>
+
+          <div class="timer">
+
+              <div class="time-box">
+
+                  <span id="days">0</span>
+
+                  <small>DAYS</small>
+
+              </div>
+
+              <div class="time-box">
+
+                  <span id="hours">0</span>
+
+                  <small>HOURS</small>
+
+              </div>
+
+              <div class="time-box">
+
+                  <span id="minutes">0</span>
+
+                  <small>MINUTES</small>
+
+              </div>
+
+              <div class="time-box">
+
+                  <span id="seconds">0</span>
+
+                  <small>SECONDS</small>
+
+              </div>
+
+          </div>
+
+      </section>
+
+      <!-- PADDOCK PASS -->
+
+      <section id="vip-pass">
+
+          <div class="pass">
+
+              <div class="pass-header">
+
+                  PADDOCK PASS
+
+              </div>
+
+              <div class="pass-body">
+
+                  <h2>
+
+                      NATHALIA
+
+                  </h2>
+
+                  <div class="driver-role">
+
+                      DRIVER
+
+                  </div>
+
+                  <div class="event-details">
+
+                      <p>
+                          📅 19 Junio 2026
+                      </p>
+
+                      <p>
+                          🕓 2:00 PM
+                      </p>
+
+                      <p>
+                          📍 San Salvador
+                      </p>
+
+                  </div>
+
+              </div>
+
+          </div>
+
+      </section>
+
+      <!-- TEAMS -->
+
+      <section id="teams">
+
+          <h2 class="section-title">
+
+              TEAM LINEUP
+
+          </h2>
+
+          <div
+              id="teamsContainer"
+              class="teams-container">
+
+          </div>
+
+      </section>
+
+      <!-- RSVP -->
+
+      <section id="rsvp">
+
+          <h2>
+
+              READY FOR LIGHTS OUT?
+
+          </h2>
+
+          <a
+              class="rsvp-btn"
+              href="https://wa.me/50312345678?text=Confirmo%20mi%20asistencia%20al%20Nathalia%20GP">
+
+              CONFIRM ATTENDANCE
+
+          </a>
+
+      </section>
+
+  </main>
+
+  <!-- LIGHTBOX -->
+
+  <div id="lightbox">
+
+      <span class="close">
+
+          &times;
+
+      </span>
+
+      <img id="lightboxImage">
+
+  </div>
+
+  <script src="js/app.js"></script>
+
+</body>
+</html>

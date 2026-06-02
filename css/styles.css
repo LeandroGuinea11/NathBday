@@ -1,0 +1,746 @@
+/* =========================
+   RESET
+========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:'Orbitron',sans-serif;
+
+    background:#050505;
+
+    color:white;
+
+    overflow-x:hidden;
+}
+
+/* =========================
+   BACKGROUND PATTERN
+========================= */
+
+body::before{
+
+    content:"";
+
+    position:fixed;
+
+    inset:0;
+
+    background:
+    repeating-linear-gradient(
+        -45deg,
+        transparent,
+        transparent 50px,
+        rgba(255,255,255,.02) 50px,
+        rgba(255,255,255,.02) 100px
+    );
+
+    pointer-events:none;
+
+    z-index:-1;
+}
+
+/* =========================
+   SPLASH SCREEN
+========================= */
+
+#splash-screen{
+
+    position:fixed;
+
+    inset:0;
+
+    background:
+    linear-gradient(
+        180deg,
+        #0f1119 0%,
+        #050505 100%
+    );
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:9999;
+}
+
+.splash-content{
+
+    text-align:center;
+
+    width:90%;
+}
+
+.event-logo{
+
+    width:min(280px,70vw);
+
+    margin-bottom:30px;
+}
+
+.round{
+
+    color:#E10600;
+
+    letter-spacing:4px;
+
+    margin-bottom:15px;
+}
+
+.splash-content h1{
+
+    font-size:clamp(
+        3rem,
+        12vw,
+        7rem
+    );
+
+    margin-bottom:20px;
+}
+
+.splash-content p{
+
+    color:#ccc;
+
+    margin-bottom:35px;
+}
+
+.btn{
+
+    width:100%;
+
+    max-width:320px;
+
+    height:60px;
+
+    border:none;
+
+    background:#E10600;
+
+    color:white;
+
+    cursor:pointer;
+
+    font-family:'Orbitron',sans-serif;
+
+    font-weight:700;
+
+    letter-spacing:2px;
+
+    border-radius:10px;
+
+    transition:.3s;
+}
+
+.btn:hover{
+
+    transform:translateY(-3px);
+}
+
+/* =========================
+   RACE LIGHTS
+========================= */
+
+#race-overlay{
+
+    position:fixed;
+
+    inset:0;
+
+    background:black;
+
+    display:none;
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:10000;
+}
+
+.race-center{
+
+    text-align:center;
+}
+
+.lights-container{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:12px;
+
+    margin-bottom:40px;
+}
+
+.race-light{
+
+    width:50px;
+    height:50px;
+
+    border-radius:50%;
+
+    background:#1a1a1a;
+
+    transition:.3s;
+}
+
+.race-light.active{
+
+    background:#E10600;
+
+    box-shadow:
+    0 0 20px #E10600,
+    0 0 50px #E10600;
+}
+
+.race-text{
+
+    letter-spacing:3px;
+}
+
+/* =========================
+   MAIN CONTENT
+========================= */
+
+#main-content{
+
+    display:none;
+}
+
+/* =========================
+   HERO
+========================= */
+
+#hero{
+
+    min-height:100vh;
+
+    padding:30px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+}
+
+.hero-tag{
+
+    color:#E10600;
+
+    margin-bottom:20px;
+
+    letter-spacing:3px;
+}
+
+.hero-content h1{
+
+    font-size:clamp(
+        3rem,
+        12vw,
+        7rem
+    );
+}
+
+.hero-content h2{
+
+    color:#ccc;
+
+    margin-bottom:15px;
+}
+
+/* =========================
+   COUNTDOWN
+========================= */
+
+#countdown{
+
+    padding:80px 20px;
+
+    text-align:center;
+}
+
+#countdown h2{
+
+    margin-bottom:40px;
+}
+
+.timer{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(2,1fr);
+
+    gap:20px;
+}
+
+.time-box{
+
+    background:#111;
+
+    padding:25px;
+
+    border-radius:12px;
+}
+
+.time-box span{
+
+    display:block;
+
+    font-size:clamp(
+        2rem,
+        10vw,
+        4rem
+    );
+
+    color:#E10600;
+}
+
+.time-box small{
+
+    color:#888;
+}
+
+/* =========================
+   PADDOCK PASS
+========================= */
+
+#vip-pass{
+
+    padding:80px 20px;
+}
+
+.pass{
+
+    background:#111;
+
+    border-top:5px solid #E10600;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    box-shadow:
+    0 0 40px rgba(225,6,0,.15);
+}
+
+.pass-header{
+
+    background:#0a0a0a;
+
+    color:#E10600;
+
+    padding:20px;
+
+    letter-spacing:3px;
+
+    font-weight:700;
+}
+
+.pass-body{
+
+    padding:30px;
+}
+
+.pass-body h2{
+
+    font-size:clamp(
+        2rem,
+        10vw,
+        4rem
+    );
+}
+
+.driver-role{
+
+    color:#888;
+
+    letter-spacing:3px;
+
+    margin-bottom:30px;
+}
+
+.event-details{
+
+    display:grid;
+
+    gap:15px;
+}
+
+/* =========================
+   TEAMS
+========================= */
+
+#teams{
+
+    padding:80px 15px;
+}
+
+.section-title{
+
+    text-align:center;
+
+    margin-bottom:40px;
+
+    font-size:clamp(
+        2rem,
+        8vw,
+        4rem
+    );
+}
+
+.teams-container{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:25px;
+}
+
+.team-card{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:25px;
+
+    padding:25px;
+
+    border-radius:24px;
+
+    overflow:hidden;
+}
+
+.team-card:hover{
+
+    transform:translateY(-5px);
+}
+
+.team-info{
+
+    text-align:center;
+}
+
+.team-info h3{
+
+    font-size:2rem;
+
+    margin-bottom:10px;
+}
+
+.team-info p{
+
+    opacity:.8;
+}
+
+.team-card img{
+
+    width:100%;
+
+    max-width:500px;
+
+    margin:auto;
+
+    display:block;
+
+    border-radius:15px;
+
+    object-fit:contain;
+}
+
+.team-header{
+
+    font-size:2rem;
+
+    font-weight:700;
+
+    text-transform:uppercase;
+
+    letter-spacing:2px;
+
+    text-align:center;
+}
+
+.drivers-container{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:15px;
+}
+
+.driver-profile{
+
+    background:
+    rgba(255,255,255,.10);
+
+    backdrop-filter:
+    blur(8px);
+
+    border-radius:14px;
+
+    padding:18px;
+}
+
+.driver-number{
+
+    font-size:2rem;
+
+    font-weight:800;
+
+    margin-bottom:10px;
+}
+
+.driver-name{
+
+    display:flex;
+
+    flex-direction:column;
+
+    margin-bottom:10px;
+}
+
+.first-name{
+
+    font-size:.8rem;
+
+    opacity:.8;
+
+    text-transform:uppercase;
+
+    letter-spacing:2px;
+}
+
+.last-name{
+
+    font-size:1.4rem;
+
+    font-weight:700;
+
+    text-transform:uppercase;
+
+    letter-spacing:1px;
+}
+
+.driver-profile p{
+
+    font-size:.9rem;
+
+    line-height:1.6;
+
+    opacity:.9;
+}
+
+.driver-content{
+
+    flex:1;
+}
+
+.driver-content h4{
+
+    font-size:1rem;
+
+    margin-bottom:6px;
+
+    letter-spacing:1px;
+}
+
+.driver-content p{
+
+    font-size:.85rem;
+
+    line-height:1.5;
+
+    opacity:.9;
+}
+
+.haas{
+    background:linear-gradient(135deg,#8f0015,#e9e2e2);
+}
+
+.mercedes{
+    background:linear-gradient(135deg,#00665f,#00D2BE);
+}
+
+.redbull{
+    background:linear-gradient(135deg,#17376a,#1E5BC6);
+}
+.williams{
+    background:linear-gradient(135deg,#17376a,#5c8bdb);
+}
+
+.mclaren{
+    background:linear-gradient(135deg,#9f5000,#FF8700);
+}
+
+/* =========================
+   RSVP
+========================= */
+
+#rsvp{
+
+    padding:100px 20px;
+
+    text-align:center;
+}
+
+#rsvp h2{
+
+    margin-bottom:30px;
+}
+
+.rsvp-btn{
+
+    display:inline-block;
+
+    text-decoration:none;
+
+    background:#25D366;
+
+    color:white;
+
+    padding:18px 30px;
+
+    border-radius:10px;
+
+    font-weight:700;
+}
+
+/* =========================
+   LIGHTBOX
+========================= */
+
+#lightbox{
+
+    display:none;
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.95);
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:99999;
+}
+
+#lightbox img{
+
+    max-width:95vw;
+
+    max-height:90vh;
+}
+
+.close{
+
+    position:absolute;
+
+    top:20px;
+
+    right:30px;
+
+    font-size:60px;
+
+    cursor:pointer;
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (min-width:768px){
+
+    .timer{
+
+        grid-template-columns:
+        repeat(4,1fr);
+
+        max-width:1000px;
+
+        margin:auto;
+    }
+
+    .teams-container{
+
+        max-width:1200px;
+
+        margin:auto;
+    }
+
+    .team-card{
+
+        flex-direction:row;
+
+        align-items:center;
+
+        justify-content:space-between;
+    }
+
+    .team-info{
+
+        text-align:left;
+    }
+
+    .team-card img{
+
+        width:50%;
+
+        margin-top:0;
+    }
+
+    .pass{
+
+        max-width:900px;
+
+        margin:auto;
+    }
+}
+
+/* =========================
+   DESKTOP
+========================= */
+
+@media (min-width:1200px){
+
+    #hero{
+
+        padding:80px;
+    }
+
+    .hero-content{
+
+        max-width:1000px;
+    }
+
+    .hero-content h1{
+
+        font-size:7rem;
+    }
+
+    .section-title{
+
+        font-size:4rem;
+    }
+}
